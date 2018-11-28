@@ -24,6 +24,7 @@ services:
       - ./theme:/var/www/html/wp-content/themes/
       - ./dep/plugins:/var/www/html/wp-content/plugins
       - ./dep/uploads:/var/www/html/wp-content/uploads
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     links: 
       - db
     restart: always
