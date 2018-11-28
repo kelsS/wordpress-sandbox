@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    container_name:  database
+    container_name:  wp-sb-database
     image: mariadb  # Pull mysql image from Docker Hub
     ports:  # Set up ports exposed for other containers to connect to
       - "3306:3306"
@@ -15,7 +15,7 @@ services:
       MYSQL_PASSWORD: wordpress
   wordpress:
     image: wordpress:4.9.8-php7.2-apache
-    container_name: wordpress 
+    container_name: wordpress-sb-cms 
     depends_on:
       - db
     ports:
@@ -32,7 +32,7 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: phpmyadmin-sb
     depends_on: 
       - db
     restart: always
