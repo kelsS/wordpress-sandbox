@@ -14,7 +14,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
   wordpress:
-    image: wordpress:latest
+    image: wordpress:4.9.8-php7.2-apache
     container_name: wordpress 
     depends_on:
       - db
